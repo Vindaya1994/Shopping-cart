@@ -1,0 +1,39 @@
+<div class="w3-row">
+  <div class="w3-display-container" >
+    <img class="w3-image" src="../images/background.jpg" alt="London" width="1500" height="700">
+    <div class="w3-display-middle w3-padding w3-margin w3-light-gray" style="width:65%">
+      <div>
+          <h1 class="w3-center w3-xxlarge"><b>Sign In</b> </h1>
+      </div>
+      {{#if hasErrors}}
+      <div class="w3-panel " style="background-color:#ffb3b3">
+        {{#each messages}}
+        <p>{{ this }}</p>
+        {{/each}}
+      </div>
+
+      {{/if}}
+
+    <form class="w3-container w3-card-4 w3-light-grey" action="/user/signin" method="post">
+
+      <p>
+      <label>Email</label>
+      <input class="w3-input w3-border w3-round" name="email" type="text"></p>
+      <p>
+      <label>Password</label>
+      <input class="w3-input w3-border w3-round-large" name="password" type="password"></p>
+      <input class="w3-input w3-border w3-round" name="_csrf" type="hidden"  value="{{ csrfToken }}">
+      <button type="submit" class="w3-button w3-green" >Sign In</button>
+    </form>
+
+    </div>
+    </div>
+</div>
+<!-- Header -->
+<!--<div class="w3-row">
+
+
+
+
+
+</div>-->

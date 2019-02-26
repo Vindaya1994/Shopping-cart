@@ -1,0 +1,45 @@
+{{# if products }}
+<div class="container ">
+  <div class="w3-container w3-row">
+    <h2 class="w3-light-gray">Shopping Cart Items</h2>
+
+    <ul class="w3-ul w3-border">
+      {{#each products}}
+      <li>
+          <strong>{{ this.item.title }} </strong>
+          <span class="w3-badge">{{this.qty}}</span></p>
+          <span class="w3-bar-item">{{ this.price }}</span>
+          <!--<div class="w3-dropdown-hover">
+            <button class="w3-button w3-blue">Action</button>
+            <div class="w3-dropdown-content w3-bar-block w3-border">
+              <a href="#" class="w3-bar-item w3-button">Reduce by 1</a>
+              <a href="#" class="w3-bar-item w3-button">Remove all</a>
+            </div>
+          </div>-->
+      </li>
+      {{/each}}
+
+    </ul>
+  </div>
+
+  <div class="w3-container w3-row">
+    <h2 class="w3-light-gray">total Price :{{totalPrice}} </h2>
+  </div>
+
+  <hr>
+
+  <!--<div class="w3-container w3-row">
+    <button class="w3-btn w3-round-xlarge w3-green">Checkout</button>
+  </div>-->
+</div>
+
+{{ else }}
+
+<div>
+  <div class="w3-container w3-row">
+    <h2>No Items in the cart </h2>
+  </div>
+</div>
+
+
+{{/if}}
